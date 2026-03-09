@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# AnyFeast UFC Gym — Platform Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Live Demo → [https://anyfeast-ufc-gym.netlify.app](https://anyfeast-ufc-gym.netlify.app)**
 
-Currently, two official plugins are available:
+A full-featured gym platform management dashboard built with React, TypeScript, and Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Roles & Login Credentials (Mock)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Role        | Phone        | OTP    |
+|-------------|-------------|--------|
+| Trainer     | 9999988888  | 123456 |
+| Owner       | 8888877777  | 123456 |
+| Member      | 7777766666  | 123456 |
+| Super Admin | 9000000000  | 123456 |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Super Admin** — Platform-wide analytics, gym management (enable/disable), trainer & member oversight
+- **Owner** — Multi-gym license management, trainer leaderboard, member roster, revenue analytics
+- **Trainer** — Member onboarding, coupon management, nutrition plan assignment
+- **Member** — Membership status, nutrition plan viewer
+- Dark mode support across all roles
+- Framer Motion animations throughout
+- Recharts for all analytics dashboards
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 19** + **TypeScript**
+- **Vite** — build tool
+- **Tailwind CSS** — styling
+- **Framer Motion** — animations
+- **Recharts** — charts & analytics
+- **React Router v7** — routing
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Production Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+Deployed via **Netlify** — live at [https://anyfeast-ufc-gym.netlify.app](https://anyfeast-ufc-gym.netlify.app)
