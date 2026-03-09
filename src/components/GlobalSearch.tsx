@@ -150,7 +150,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose }) =
                       className={clsx(
                         "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs",
                         r.type === "member"
-                          ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+                          ? "bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400"
                           : "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
                       )}
                     >
@@ -172,7 +172,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose }) =
                       className={clsx(
                         "ml-auto shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-semibold",
                         r.type === "member"
-                          ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+                          ? "bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400"
                           : "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
                       )}
                     >

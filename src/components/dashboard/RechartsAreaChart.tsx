@@ -66,8 +66,8 @@ export const RechartsAreaChart: React.FC<RechartsAreaChartProps> = ({
       <AreaChart data={chartData} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
         <defs>
           <linearGradient id="colorAct" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#6366f1" stopOpacity={0.18} />
-            <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+            <stop offset="5%" stopColor="#FF6A00" stopOpacity={0.18} />
+            <stop offset="95%" stopColor="#FF6A00" stopOpacity={0} />
           </linearGradient>
           <linearGradient id="colorRen" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#10b981" stopOpacity={0.18} />
@@ -95,10 +95,10 @@ export const RechartsAreaChart: React.FC<RechartsAreaChartProps> = ({
         <Area
           type="monotone"
           dataKey="Activations"
-          stroke="#6366f1"
+          stroke="#FF6A00"
           strokeWidth={2}
           fill="url(#colorAct)"
-          dot={{ r: 3, fill: "#6366f1", strokeWidth: 0 }}
+          dot={{ r: 3, fill: "#FF6A00", strokeWidth: 0 }}
           activeDot={{ r: 5, strokeWidth: 0 }}
         />
         <Area

@@ -145,8 +145,8 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
   const chip = (active: boolean) =>
     `cursor-pointer rounded-xl border px-3 py-2 text-xs font-semibold transition-all select-none ${
       active
-        ? "border-indigo-500 bg-indigo-50 text-indigo-700 dark:border-indigo-400 dark:bg-indigo-900/30 dark:text-indigo-400"
-        : "border-gray-200 text-gray-600 hover:border-indigo-300 hover:bg-indigo-50/40 dark:border-slate-700 dark:text-slate-400"
+        ? "border-brand-500 bg-brand-50 text-brand-700 dark:border-brand-400 dark:bg-brand-600/15 dark:text-brand-400"
+        : "border-gray-200 text-gray-600 hover:border-brand-300 hover:bg-brand-50/40 dark:border-slate-700 dark:text-slate-400"
     }`;
 
   return (
@@ -156,7 +156,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
         {/* Header */}
         <div className="flex shrink-0 items-center justify-between border-b border-gray-100 px-6 py-4 dark:border-slate-700">
           <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-600">
               <Sparkles className="h-4 w-4 text-white" />
             </span>
             <div>
@@ -177,10 +177,10 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
                 <button onClick={() => (i < step && step !== 2) ? setStep(i) : undefined}
                   className={`flex flex-col items-center gap-0.5 ${i < step && step !== 2 ? "cursor-pointer" : "cursor-default"}`}>
                   <div className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
-                    i < step ? "bg-emerald-500 text-white" : i === step ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-400 dark:bg-slate-700"
+                    i < step ? "bg-emerald-500 text-white" : i === step ? "bg-brand-600 text-white" : "bg-gray-100 text-gray-400 dark:bg-slate-700"
                   }`}>{i < step ? "✓" : i + 1}</div>
                   <span className={`text-[10px] font-semibold whitespace-nowrap ${
-                    i === step ? "text-indigo-600 dark:text-indigo-400" : i < step ? "text-emerald-600 dark:text-emerald-400" : "text-gray-300 dark:text-slate-600"
+                    i === step ? "text-brand-600 dark:text-brand-400" : i < step ? "text-emerald-600 dark:text-emerald-400" : "text-gray-300 dark:text-slate-600"
                   }`}>{label}</span>
                 </button>
                 {i < 2 && <div className={`flex-1 h-px mx-2 mb-3 mt-3 ${i < step ? "bg-emerald-400" : "bg-gray-200 dark:bg-slate-700"}`} />}
@@ -211,13 +211,13 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
                   <label className="mb-1.5 block text-xs font-semibold text-gray-700 dark:text-slate-300">Your Age</label>
                   <input type="number" min={10} max={80} value={form.age} onChange={(e) => set("age", e.target.value)}
                     placeholder="e.g. 25"
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500" />
+                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500" />
                 </div>
                 <div>
                   <label className="mb-1.5 block text-xs font-semibold text-gray-700 dark:text-slate-300">Weight (kg)</label>
                   <input type="number" min={30} max={200} value={form.weightKg} onChange={(e) => set("weightKg", e.target.value)}
                     placeholder="e.g. 72"
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500" />
+                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500" />
                 </div>
               </div>
 
@@ -225,7 +225,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
                 <label className="mb-1.5 block text-xs font-semibold text-gray-700 dark:text-slate-300">Health Notes <span className="text-gray-400 font-normal">(optional)</span></label>
                 <textarea value={form.healthNotes} onChange={(e) => set("healthNotes", e.target.value)} rows={2}
                   placeholder="e.g. diabetes, hypertension, lactose intolerant, bad knee…"
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500" />
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500" />
               </div>
             </div>
           )}
@@ -256,14 +256,14 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
                     <button key={val} onClick={() => set("activity", val)}
                       className={`flex w-full items-center justify-between rounded-xl border px-4 py-2.5 text-left transition-all ${
                         form.activity === val
-                          ? "border-indigo-500 bg-indigo-50 dark:border-indigo-400 dark:bg-indigo-900/30"
-                          : "border-gray-200 hover:border-indigo-300 dark:border-slate-700 dark:hover:border-indigo-600"
+                          ? "border-brand-500 bg-brand-50 dark:border-brand-400 dark:bg-brand-600/15"
+                          : "border-gray-200 hover:border-brand-300 dark:border-slate-700 dark:hover:border-brand-600"
                       }`}>
                       <div>
-                        <p className={`text-xs font-semibold ${form.activity === val ? "text-indigo-700 dark:text-indigo-400" : "text-gray-700 dark:text-slate-300"}`}>{label}</p>
+                        <p className={`text-xs font-semibold ${form.activity === val ? "text-brand-700 dark:text-brand-400" : "text-gray-700 dark:text-slate-300"}`}>{label}</p>
                         <p className="text-[11px] text-gray-400 dark:text-slate-500">{desc}</p>
                       </div>
-                      <div className={`h-4 w-4 rounded-full border-2 ${form.activity === val ? "border-indigo-500 bg-indigo-500" : "border-gray-300 dark:border-slate-600"}`} />
+                      <div className={`h-4 w-4 rounded-full border-2 ${form.activity === val ? "border-brand-500 bg-brand-500" : "border-gray-300 dark:border-slate-600"}`} />
                     </button>
                   ))}
                 </div>
@@ -271,10 +271,10 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
 
               <div>
                 <label className="mb-2 block text-xs font-semibold text-gray-700 dark:text-slate-300">
-                  Meals per day — <span className="text-indigo-600 dark:text-indigo-400 font-bold">{form.mealsPerDay} meals</span>
+                  Meals per day — <span className="text-brand-600 dark:text-brand-400 font-bold">{form.mealsPerDay} meals</span>
                 </label>
                 <input type="range" min={3} max={6} step={1} value={form.mealsPerDay}
-                  onChange={(e) => set("mealsPerDay", parseInt(e.target.value))} className="w-full accent-indigo-600" />
+                  onChange={(e) => set("mealsPerDay", parseInt(e.target.value))} className="w-full accent-brand-600" />
                 <div className="mt-1 flex justify-between text-[10px] text-gray-400 dark:text-slate-500">
                   <span>3</span><span>4</span><span>5</span><span>6</span>
                 </div>
@@ -285,7 +285,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
           {/* Step 2 — Result */}
           {step === 2 && result && (
             <div className="space-y-4">
-              <div className="rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 p-4 text-white">
+              <div className="rounded-2xl bg-gradient-to-br from-brand-500 to-purple-600 p-4 text-white">
                 <p className="text-[11px] font-semibold opacity-70 uppercase tracking-wide mb-0.5">Your Custom Plan</p>
                 <p className="text-base font-bold">{result.title}</p>
                 <p className="text-xs opacity-70 mt-1">Duration: {result.duration} · 💧 {result.hydration}</p>
@@ -294,7 +294,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
               <div className="grid grid-cols-4 gap-2">
                 {[
                   { icon: <Flame className="h-3.5 w-3.5 text-orange-500" />, label: "Calories", val: `${result.calories}`, bg: "bg-orange-50 dark:bg-orange-900/20" },
-                  { icon: <Zap   className="h-3.5 w-3.5 text-indigo-500" />, label: "Protein",  val: `${result.protein}g`, bg: "bg-indigo-50 dark:bg-indigo-900/20" },
+                  { icon: <Zap   className="h-3.5 w-3.5 text-brand-500" />, label: "Protein",  val: `${result.protein}g`, bg: "bg-brand-50 dark:bg-brand-600/10" },
                   { icon: <Apple className="h-3.5 w-3.5 text-green-500" />,  label: "Carbs",    val: `${result.carbs}g`,   bg: "bg-green-50 dark:bg-green-900/20" },
                   { icon: <Activity className="h-3.5 w-3.5 text-amber-500" />, label: "Fat",    val: `${result.fat}g`,     bg: "bg-amber-50 dark:bg-amber-900/20" },
                 ].map((m) => (
@@ -327,7 +327,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
                   <ul className="space-y-1.5">
                     {result.tips.map((tip, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-gray-600 dark:text-slate-400">
-                        <span className="mt-px shrink-0 text-indigo-500">✦</span>{tip}
+                        <span className="mt-px shrink-0 text-brand-500">✦</span>{tip}
                       </li>
                     ))}
                   </ul>
@@ -340,8 +340,8 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
           {generating && (
             <div className="flex flex-col items-center justify-center gap-4 py-20">
               <div className="relative">
-                <div className="h-16 w-16 rounded-full border-4 border-indigo-100 border-t-indigo-500 animate-spin dark:border-slate-700 dark:border-t-indigo-400" />
-                <Sparkles className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-indigo-500 animate-pulse" />
+                <div className="h-16 w-16 rounded-full border-4 border-brand-100 border-t-brand-500 animate-spin dark:border-slate-700 dark:border-t-brand-400" />
+                <Sparkles className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-brand-500 animate-pulse" />
               </div>
               <div className="text-center">
                 <p className="text-sm font-semibold text-gray-800 dark:text-slate-200">Building your personalised plan…</p>
@@ -355,7 +355,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
         <div className="shrink-0 border-t border-gray-100 px-6 py-4 dark:border-slate-700">
           {step === 0 && !generating && (
             <button onClick={() => setStep(1)}
-              className="w-full rounded-xl bg-indigo-600 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors">
+              className="w-full rounded-xl bg-brand-600 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 transition-colors">
               Next: Diet & Activity →
             </button>
           )}
@@ -363,7 +363,7 @@ const GenModal: React.FC<GenModalProps> = ({ memberName, defaultGoal, onClose })
             <div className="flex gap-3">
               <button onClick={() => setStep(0)} className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 dark:border-slate-700 dark:text-slate-400">← Back</button>
               <button onClick={handleGenerate}
-                className="flex flex-[2] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 py-2.5 text-sm font-semibold text-white hover:from-indigo-600 hover:to-purple-700 shadow-md">
+                className="flex flex-[2] items-center justify-center gap-2 rounded-xl bg-brand-gradient py-2.5 text-sm font-semibold text-white hover:shadow-brand shadow-brand-sm">
                 <Sparkles className="h-4 w-4" /> Generate My Plan
               </button>
             </div>
@@ -424,7 +424,7 @@ export const MemberNutritionPage: React.FC = () => {
         subtitle="Auto-assigned plan + personalised generator"
         actions={
           <button onClick={() => setGenOpen(true)}
-            className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:from-indigo-600 hover:to-purple-700 transition-all">
+            className="flex items-center gap-2 rounded-xl bg-brand-gradient px-4 py-2 text-sm font-semibold text-white shadow-brand-sm hover:shadow-brand transition-all">
             <Sparkles className="h-4 w-4" /> Generate My Plan
           </button>
         }
@@ -433,11 +433,11 @@ export const MemberNutritionPage: React.FC = () => {
       <div className="p-6 space-y-5 max-w-2xl">
 
         {/* Info banner */}
-        <div className="flex items-start gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 dark:border-indigo-900/40 dark:bg-indigo-900/10">
-          <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 dark:text-indigo-400" />
+        <div className="flex items-start gap-3 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 dark:border-brand-600/20 dark:bg-brand-600/10">
+          <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
           <div>
-            <p className="text-sm font-semibold text-indigo-800 dark:text-indigo-300">Your plan is auto-assigned based on your subscription tier</p>
-            <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">
+            <p className="text-sm font-semibold text-brand-700 dark:text-brand-300">Your plan is auto-assigned based on your subscription tier</p>
+            <p className="text-xs text-brand-600 dark:text-brand-400 mt-0.5">
               Use <span className="font-semibold">Generate My Plan</span> for a fully personalised plan based on your diet preferences, body stats, and fitness goals.
             </p>
           </div>
@@ -484,9 +484,9 @@ export const MemberNutritionPage: React.FC = () => {
         )}
 
         {/* Generate prompt card */}
-        <div className="rounded-2xl border border-dashed border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 p-5 dark:border-indigo-800/50 dark:from-indigo-900/10 dark:to-purple-900/10">
+        <div className="rounded-2xl border border-dashed border-brand-300 bg-gradient-to-br from-brand-50 to-orange-50 p-5 dark:border-brand-600/30 dark:from-brand-600/10 dark:to-orange-900/10">
           <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-purple-600 shadow-md">
               <Sparkles className="h-6 w-6 text-white" />
             </div>
             <div className="flex-1 min-w-0">
@@ -495,7 +495,7 @@ export const MemberNutritionPage: React.FC = () => {
                 Tell us your diet preference (veg, keto, vegan…), fitness goal, activity level and body stats — we'll generate a detailed daily meal schedule with calorie & macro targets and expert tips tailored just for you.
               </p>
               <button onClick={() => setGenOpen(true)}
-                className="mt-3 flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-700 transition-colors shadow">
+                className="mt-3 flex items-center gap-1.5 rounded-xl bg-brand-600 px-4 py-2 text-xs font-semibold text-white hover:bg-brand-700 transition-colors shadow">
                 <Sparkles className="h-3.5 w-3.5" /> Generate My Custom Plan →
               </button>
             </div>

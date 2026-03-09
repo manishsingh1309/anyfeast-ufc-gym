@@ -20,7 +20,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-sm font-medium text-gray-700"
+            className="text-sm font-semibold text-gray-700 dark:text-slate-300"
           >
             {label}
           </label>
@@ -29,12 +29,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={inputId}
           className={clsx(
-            "w-full rounded-lg border px-3 py-2.5 text-sm outline-none",
-            "transition-colors duration-150 placeholder:text-gray-400",
-            "focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100",
+            "w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none",
+            "transition-all duration-200 placeholder:text-gray-400",
+            "dark:bg-slate-800/60 dark:text-slate-200 dark:placeholder:text-slate-500",
+            "focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-600/20",
             error
               ? "border-red-400 focus:border-red-400 focus:ring-red-100"
-              : "border-gray-300",
+              : "border-gray-200 dark:border-slate-700",
             className
           )}
           {...props}

@@ -74,8 +74,8 @@ export const AreaChart: React.FC<AreaChartProps> = ({
       >
         <defs>
           <linearGradient id="actGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#6366f1" stopOpacity={0.25} />
-            <stop offset="100%" stopColor="#6366f1" stopOpacity={0} />
+            <stop offset="0%" stopColor="#FF6A00" stopOpacity={0.25} />
+            <stop offset="100%" stopColor="#FF6A00" stopOpacity={0} />
           </linearGradient>
           <linearGradient id="renGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#10b981" stopOpacity={0.2} />
@@ -107,7 +107,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
 
         {/* Lines */}
         {actPaths.line && (
-          <path d={actPaths.line} fill="none" stroke="#6366f1" strokeWidth={2} strokeLinejoin="round" />
+          <path d={actPaths.line} fill="none" stroke="#FF6A00" strokeWidth={2} strokeLinejoin="round" />
         )}
         {renPaths.line && (
           <path d={renPaths.line} fill="none" stroke="#10b981" strokeWidth={2} strokeLinejoin="round" />
@@ -115,7 +115,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
 
         {/* Data points */}
         {actPoints.map((p, i) => (
-          <circle key={`a${i}`} cx={p.x} cy={p.y} r={3} fill="#6366f1" />
+          <circle key={`a${i}`} cx={p.x} cy={p.y} r={3} fill="#FF6A00" />
         ))}
         {renPoints.map((p, i) => (
           <circle key={`r${i}`} cx={p.x} cy={p.y} r={3} fill="#10b981" />
@@ -139,7 +139,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
       {/* Legend */}
       <div className="mt-2 flex items-center gap-4 px-2">
         <span className="flex items-center gap-1.5 text-xs text-gray-500">
-          <span className="inline-block h-2 w-3 rounded-sm bg-indigo-500" />
+          <span className="inline-block h-2 w-3 rounded-sm bg-brand-500" />
           Activations
         </span>
         <span className="flex items-center gap-1.5 text-xs text-gray-500">

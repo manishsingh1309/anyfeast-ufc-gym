@@ -16,7 +16,7 @@ interface RechartsDonutProps {
 export const RechartsDonut: React.FC<RechartsDonutProps> = ({
   value,
   size = 100,
-  color = "#6366f1",
+  color = "#FF6A00",
   label,
   sublabel,
 }) => {

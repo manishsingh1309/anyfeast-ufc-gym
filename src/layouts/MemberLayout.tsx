@@ -13,7 +13,7 @@ export const MemberLayout: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-50 dark:bg-slate-950">
+    <div className="flex h-screen overflow-hidden bg-[#F8FAFC] dark:bg-[#0F172A]">
       <Sidebar
         navItems={NAV_ITEMS.member}
         userName={user?.name ?? "Member"}

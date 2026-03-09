@@ -22,7 +22,7 @@ interface BarChartProps {
 export const BarChart: React.FC<BarChartProps> = ({
   data,
   height = 180,
-  barColor = "#6366f1",
+  barColor = "#FF6A00",
   showValues = true,
   className,
 }) => {
@@ -68,7 +68,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                   y={y - 6}
                   textAnchor="middle"
                   fontSize={10}
-                  fill="#6366f1"
+                  fill="#FF6A00"
                   fontWeight={600}
                 >
                   {d.value}

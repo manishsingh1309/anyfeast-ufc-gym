@@ -27,11 +27,11 @@ export const GymSelectionPage: React.FC = () => {
   if (!user) return null;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-indigo-50 to-white px-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-brand-50 via-white to-accent-50/30 px-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 shadow-lg">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-600 shadow-lg">
             <Building2 className="h-7 w-7 text-white" />
           </div>
           <h1 className="text-xl font-bold text-gray-900">Select a Gym</h1>
@@ -48,12 +48,12 @@ export const GymSelectionPage: React.FC = () => {
             <button
               key={gym.id}
               onClick={() => handleSelect(gym)}
-              className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-left shadow-sm transition-all hover:border-indigo-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-left shadow-sm transition-all hover:border-brand-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-400"
             >
               <div className="flex items-center gap-4">
                 {/* Gym avatar */}
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-indigo-50">
-                  <Building2 className="h-5 w-5 text-indigo-600" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-50">
+                  <Building2 className="h-5 w-5 text-brand-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-800">{gym.name}</p>

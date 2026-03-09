@@ -80,7 +80,7 @@ export const TrainerCouponsPage: React.FC = () => {
           <button
             onClick={openModal}
             disabled={remaining <= 0}
-            className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+            className="flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-brand-500 dark:hover:bg-brand-600"
           >
             <Plus className="h-4 w-4" />
             Generate Coupons
@@ -93,7 +93,7 @@ export const TrainerCouponsPage: React.FC = () => {
         <div className="grid grid-cols-3 gap-4">
           {[
             { label: "Licenses Remaining", value: remaining, color: remaining > 5 ? "text-emerald-600 dark:text-emerald-400" : "text-red-500 dark:text-red-400" },
-            { label: "Unused Coupons", value: unusedCount, color: "text-indigo-600 dark:text-indigo-400" },
+            { label: "Unused Coupons", value: unusedCount, color: "text-brand-600 dark:text-brand-400" },
             { label: "Used Coupons", value: usedCount, color: "text-gray-700 dark:text-slate-300" },
           ].map((s) => (
             <Card key={s.label} padding="md">
@@ -138,7 +138,7 @@ export const TrainerCouponsPage: React.FC = () => {
                       {c.status === "unused" && (
                         <button
                           onClick={() => copyCode(c.id, c.code)}
-                          className="flex items-center gap-1.5 text-xs text-indigo-600 hover:underline dark:text-indigo-400"
+                          className="flex items-center gap-1.5 text-xs text-brand-600 hover:underline dark:text-brand-400"
                         >
                           {copiedId === c.id ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
                           {copiedId === c.id ? "Copied" : "Copy"}
@@ -170,7 +170,7 @@ export const TrainerCouponsPage: React.FC = () => {
               <button
                 onClick={handleGenerate}
                 disabled={generating || remaining <= 0}
-                className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
+                className="flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 disabled:opacity-50"
               >
                 {generating ? "Generating…" : <><Tag className="h-4 w-4" /> Generate</>}
               </button>
@@ -182,20 +182,20 @@ export const TrainerCouponsPage: React.FC = () => {
       >
         {generated.length === 0 ? (
           <div className="space-y-4">
-            <div className="rounded-lg bg-indigo-50 px-4 py-2 text-sm dark:bg-indigo-900/20">
-              <span className="font-medium text-indigo-700 dark:text-indigo-400">{remaining} licenses</span>
-              <span className="text-indigo-500 dark:text-indigo-500"> remaining</span>
+            <div className="rounded-lg bg-brand-50 px-4 py-2 text-sm dark:bg-brand-600/10">
+              <span className="font-medium text-brand-700 dark:text-brand-400">{remaining} licenses</span>
+              <span className="text-brand-500 dark:text-brand-500"> remaining</span>
             </div>
             <div>
               <label className="mb-1 block text-xs font-semibold text-gray-700 dark:text-slate-300">Number of Coupons</label>
               <input type="number" min={1} max={Math.min(remaining, 50)} value={count}
                 onChange={(e) => setCount(Math.max(1, Math.min(remaining, Number(e.target.value))))}
-                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
+                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
             </div>
             <div>
               <label className="mb-1 block text-xs font-semibold text-gray-700 dark:text-slate-300">Coupon Type</label>
               <select value={couponType} onChange={(e) => setCouponType(e.target.value as typeof couponType)}
-                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
                 <option value="basic">Basic</option>
                 <option value="standard">Standard</option>
                 <option value="premium">Premium</option>
@@ -204,12 +204,12 @@ export const TrainerCouponsPage: React.FC = () => {
             <div>
               <label className="mb-1 block text-xs font-semibold text-gray-700 dark:text-slate-300">Expiry Date</label>
               <input type="date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)}
-                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
+                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-gray-700 dark:text-slate-300">Single Use Only</span>
               <button onClick={() => setSingleUse(!singleUse)}
-                className={`relative h-6 w-11 rounded-full transition-colors ${singleUse ? "bg-indigo-600 dark:bg-indigo-500" : "bg-gray-200 dark:bg-slate-600"}`}>
+                className={`relative h-6 w-11 rounded-full transition-colors ${singleUse ? "bg-brand-600 dark:bg-brand-500" : "bg-gray-200 dark:bg-slate-600"}`}>
                 <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${singleUse ? "translate-x-5" : "translate-x-0.5"}`} />
               </button>
             </div>

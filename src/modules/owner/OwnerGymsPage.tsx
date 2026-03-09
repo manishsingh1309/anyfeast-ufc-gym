@@ -111,7 +111,7 @@ const GymDetailPanel: React.FC<GymDetailPanelProps> = ({
                         ? "bg-red-500"
                         : pct >= 70
                           ? "bg-amber-500"
-                          : "bg-indigo-500"
+                          : "bg-brand-500"
                     }`}
                     style={{ width: `${pct}%` }}
                   />
@@ -143,7 +143,7 @@ const GymDetailPanel: React.FC<GymDetailPanelProps> = ({
                     key={t.id}
                     className="flex items-center gap-3 px-4 py-3 bg-white"
                   >
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-700">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-xs font-bold text-brand-700">
                       {t.name
                         .split(" ")
                         .map((w) => w[0])
@@ -232,8 +232,8 @@ export const OwnerGymsPage: React.FC = () => {
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-50">
-                        <Building2 className="h-6 w-6 text-indigo-600" />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-50">
+                        <Building2 className="h-6 w-6 text-brand-600" />
                       </div>
                       <div>
                         <p className="font-semibold text-gray-800">
@@ -276,7 +276,7 @@ export const OwnerGymsPage: React.FC = () => {
                               ? "bg-red-500"
                               : pct >= 70
                                 ? "bg-amber-500"
-                                : "bg-indigo-500"
+                                : "bg-brand-500"
                           }`}
                           style={{ width: `${pct}%` }}
                         />

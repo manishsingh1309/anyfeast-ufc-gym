@@ -39,7 +39,7 @@ const CustomTooltip = ({
     return (
       <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-xl dark:border-slate-700 dark:bg-slate-800">
         <p className="text-xs text-gray-500 dark:text-slate-400">{label}</p>
-        <p className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
+        <p className="text-sm font-bold text-brand-600 dark:text-brand-400">
           {payload[0].value}
         </p>
       </div>
@@ -51,7 +51,7 @@ const CustomTooltip = ({
 export const RechartsBarChart: React.FC<RechartsBarChartProps> = ({
   data,
   height = 180,
-  color = "#6366f1",
+  color = "#FF6A00",
 }) => {
   const maxVal = Math.max(...data.map((d) => d.value), 1);
   const chartData = data.map((d) => ({ name: d.label, value: d.value }));

@@ -21,7 +21,7 @@ export const NotFoundPage: React.FC = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-gray-50 px-4 text-center">
       <div>
-        <p className="text-6xl font-black text-indigo-200">404</p>
+        <p className="text-6xl font-black text-brand-200">404</p>
         <h1 className="mt-2 text-xl font-bold text-gray-800">
           Page not found
         </h1>

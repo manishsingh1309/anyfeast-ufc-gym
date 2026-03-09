@@ -28,8 +28,8 @@ function formatDate(d: string) {
 
 const TIER_CONFIG = {
   basic:    { label: "Basic",    color: "from-blue-400 to-blue-600",  badge: "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300" },
-  standard: { label: "Standard", color: "from-indigo-400 to-indigo-600", badge: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300" },
-  premium:  { label: "Premium",  color: "from-purple-500 to-indigo-600", badge: "bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300" },
+  standard: { label: "Standard", color: "from-brand-400 to-brand-600", badge: "bg-brand-100 text-brand-700 dark:bg-brand-600/20 dark:text-brand-300" },
+  premium:  { label: "Premium",  color: "from-purple-500 to-brand-600", badge: "bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300" },
 };
 const GOAL_LABELS: Record<string, string> = {
   weight_loss: "Weight Loss",
@@ -132,7 +132,7 @@ export const MemberDashboard: React.FC = () => {
         {/* Stats row */}
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { icon: <Calendar className="h-5 w-5 text-indigo-500" />, label: "Days Left", val: days.toString(), bg: "bg-indigo-50 dark:bg-indigo-900/20" },
+            { icon: <Calendar className="h-5 w-5 text-brand-500" />, label: "Days Left", val: days.toString(), bg: "bg-brand-50 dark:bg-brand-600/10" },
             { icon: <RefreshCw className="h-5 w-5 text-emerald-500" />, label: "Renewals", val: member.renewalCount.toString(), bg: "bg-emerald-50 dark:bg-emerald-900/20" },
             { icon: <Award className="h-5 w-5 text-purple-500" />, label: "Tier", val: tier.label, bg: "bg-purple-50 dark:bg-purple-900/20" },
             { icon: <Flame className="h-5 w-5 text-orange-500" />, label: "Goal", val: GOAL_LABELS[member.goalType ?? "maintenance"] ?? "—", bg: "bg-orange-50 dark:bg-orange-900/20" },
@@ -148,17 +148,17 @@ export const MemberDashboard: React.FC = () => {
         {/* Quick actions */}
         <div className="grid gap-3 sm:grid-cols-2">
           <button onClick={() => navigate("/member/membership")}
-            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-left hover:border-indigo-300 hover:shadow-md transition-all dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-600 group">
+            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-left hover:border-brand-300 hover:shadow-md transition-all dark:border-slate-700 dark:bg-slate-800 dark:hover:border-brand-600 group">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-900/30">
-                <CreditCard className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 dark:bg-brand-600/15">
+                <CreditCard className="h-5 w-5 text-brand-600 dark:text-brand-400" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-gray-800 dark:text-slate-200">My Membership</p>
                 <p className="text-xs text-gray-400 dark:text-slate-500">Details & renewal info</p>
               </div>
             </div>
-            <ChevronRight className="h-4 w-4 text-gray-300 group-hover:text-indigo-500 transition-colors" />
+            <ChevronRight className="h-4 w-4 text-gray-300 group-hover:text-brand-500 transition-colors" />
           </button>
 
           <button onClick={() => navigate("/member/nutrition")}
@@ -180,7 +180,7 @@ export const MemberDashboard: React.FC = () => {
         {plan && (
           <Card padding="none">
             <div className="p-4 border-b border-gray-100 dark:border-slate-700 flex items-center gap-2">
-              <Activity className="h-4 w-4 text-indigo-500" />
+              <Activity className="h-4 w-4 text-brand-500" />
               <p className="text-sm font-semibold text-gray-800 dark:text-slate-200">Your Assigned Nutrition Plan</p>
             </div>
             <div className="p-4 flex items-center justify-between">
@@ -197,7 +197,7 @@ export const MemberDashboard: React.FC = () => {
                 </div>
               </div>
               <button onClick={() => navigate("/member/nutrition")}
-                className="flex items-center gap-1 rounded-lg bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400 dark:hover:bg-indigo-900/50 transition-colors">
+                className="flex items-center gap-1 rounded-lg bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-100 dark:bg-brand-600/15 dark:text-brand-400 dark:hover:bg-brand-600/25 transition-colors">
                 View <ArrowRight className="h-3 w-3" />
               </button>
             </div>

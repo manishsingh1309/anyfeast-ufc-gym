@@ -52,8 +52,8 @@ const KIND_STYLES: Record<ToastKind, { bg: string; icon: React.ReactNode }> = {
     icon: <XCircle className="h-4 w-4 text-red-600 dark:text-red-400 shrink-0" />,
   },
   info: {
-    bg: "bg-indigo-50 border-indigo-200 dark:bg-indigo-900/30 dark:border-indigo-700",
-    icon: <Info className="h-4 w-4 text-indigo-600 dark:text-indigo-400 shrink-0" />,
+    bg: "bg-brand-50 border-brand-200 dark:bg-brand-600/15 dark:border-brand-700",
+    icon: <Info className="h-4 w-4 text-brand-600 dark:text-brand-400 shrink-0" />,
   },
   warning: {
     bg: "bg-amber-50 border-amber-200 dark:bg-amber-900/30 dark:border-amber-700",

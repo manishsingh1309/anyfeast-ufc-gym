@@ -57,19 +57,19 @@ export const Modal: React.FC<ModalProps> = ({
       {/* Panel */}
       <div
         className={clsx(
-          "relative w-full rounded-2xl border border-gray-200 bg-white shadow-2xl",
-          "dark:border-slate-700 dark:bg-slate-800",
+          "relative w-full rounded-2xl border border-gray-100 bg-white shadow-2xl",
+          "dark:border-slate-700/60 dark:bg-[#1e2535]",
           sizeMap[size]
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4 dark:border-slate-700">
-          <h2 className="text-base font-semibold text-gray-900 dark:text-slate-100">
+        <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4 dark:border-slate-700/60">
+          <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">
             {title}
           </h2>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-slate-700 dark:hover:text-slate-300"
+            className="rounded-xl p-1.5 text-gray-400 transition-all hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-brand-600/10 dark:hover:text-brand-400"
           >
             <X className="h-4 w-4" />
           </button>
@@ -80,7 +80,7 @@ export const Modal: React.FC<ModalProps> = ({
 
         {/* Footer */}
         {footer && (
-          <div className="flex items-center justify-end gap-3 border-t border-gray-200 px-6 py-4 dark:border-slate-700">
+          <div className="flex items-center justify-end gap-3 border-t border-gray-100 px-6 py-4 dark:border-slate-700/60">
             {footer}
           </div>
         )}

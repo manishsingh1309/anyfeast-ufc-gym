@@ -26,7 +26,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
 }) => {
   const icon = (
     <Loader2
-      className={clsx("animate-spin text-indigo-600", sizeMap[size])}
+      className={clsx("animate-spin text-brand-600", sizeMap[size])}
       aria-hidden="true"
     />
   );

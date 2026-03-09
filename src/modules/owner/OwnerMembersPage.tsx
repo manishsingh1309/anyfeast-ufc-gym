@@ -79,7 +79,7 @@ export const OwnerMembersPage: React.FC = () => {
           className="grid grid-cols-2 gap-3 sm:grid-cols-4"
         >
           {[
-            { label: "Total", count: counts.all, color: "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400", dot: "bg-indigo-500" },
+            { label: "Total", count: counts.all, color: "bg-brand-50 text-brand-700 dark:bg-brand-600/15 dark:text-brand-400", dot: "bg-brand-500" },
             { label: "Active", count: counts.active, color: "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400", dot: "bg-emerald-500" },
             { label: "Expiring", count: counts.expiring_soon, color: "bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400", dot: "bg-amber-500" },
             { label: "Expired", count: counts.expired, color: "bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-400", dot: "bg-red-400" },
@@ -104,7 +104,7 @@ export const OwnerMembersPage: React.FC = () => {
                 onClick={() => setTab(value)}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-all ${
                   tab === value
-                    ? "bg-indigo-600 text-white dark:bg-indigo-500"
+                    ? "bg-brand-600 text-white dark:bg-brand-500"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-slate-700 dark:text-slate-400 dark:hover:bg-slate-600"
                 }`}
               >
@@ -121,7 +121,7 @@ export const OwnerMembersPage: React.FC = () => {
             <select
               value={gymFilter}
               onChange={(e) => setGymFilter(e.target.value)}
-              className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-700 shadow-sm focus:border-indigo-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
+              className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-700 shadow-sm focus:border-brand-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
             >
               <option value="all">All Gyms</option>
               {gyms.map((g) => (
@@ -136,7 +136,7 @@ export const OwnerMembersPage: React.FC = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search name or phone…"
-                className="rounded-lg border border-gray-200 bg-white pl-8 pr-3 py-1.5 text-xs text-gray-700 shadow-sm placeholder:text-gray-400 focus:border-indigo-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder:text-slate-600 w-48"
+                className="rounded-lg border border-gray-200 bg-white pl-8 pr-3 py-1.5 text-xs text-gray-700 shadow-sm placeholder:text-gray-400 focus:border-brand-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder:text-slate-600 w-48"
               />
             </div>
           </div>

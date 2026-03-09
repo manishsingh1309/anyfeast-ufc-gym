@@ -17,7 +17,7 @@ const heightMap = { xs: "h-1", sm: "h-1.5", md: "h-2" };
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
   value,
-  colorClass = "bg-indigo-500",
+  colorClass = "bg-brand-500",
   showLabel = false,
   height = "sm",
   className,

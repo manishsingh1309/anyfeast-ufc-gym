@@ -78,7 +78,7 @@ export const OtpInput: React.FC<OtpInputProps> = ({
           className={clsx(
             "h-12 w-10 rounded-lg border text-center text-lg font-semibold outline-none",
             "transition-colors duration-150",
-            "focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100",
+            "focus:border-brand-500 focus:ring-2 focus:ring-brand-100",
             error
               ? "border-red-400 text-red-600 focus:ring-red-100"
               : "border-gray-300 text-gray-800",

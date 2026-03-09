@@ -20,8 +20,8 @@ function daysRemaining(endDate: string) {
 
 const TIER_CONFIG = {
   basic:    { label: "Basic",    gradient: "from-blue-400 to-blue-600",     ring: "ring-blue-300" },
-  standard: { label: "Standard", gradient: "from-indigo-400 to-indigo-600", ring: "ring-indigo-300" },
-  premium:  { label: "Premium",  gradient: "from-purple-500 to-indigo-600", ring: "ring-purple-300" },
+  standard: { label: "Standard", gradient: "from-brand-400 to-brand-600", ring: "ring-brand-300" },
+  premium:  { label: "Premium",  gradient: "from-purple-500 to-brand-600", ring: "ring-purple-300" },
 };
 const TIER_PERKS: Record<string, string[]> = {
   basic:    ["Access to gym floor equipment", "Maintenance nutrition plan", "1 fitness assessment/month"],
@@ -121,7 +121,7 @@ export const MemberMembershipPage: React.FC = () => {
         {/* Stats row */}
         <div className="grid grid-cols-3 gap-3">
           {[
-            { icon: <Calendar className="h-5 w-5 text-indigo-500" />, label: "Days Remaining", val: `${days}`, bg: "bg-indigo-50 dark:bg-indigo-900/20" },
+            { icon: <Calendar className="h-5 w-5 text-brand-500" />, label: "Days Remaining", val: `${days}`, bg: "bg-brand-50 dark:bg-brand-600/10" },
             { icon: <RefreshCw className="h-5 w-5 text-emerald-500" />, label: "Times Renewed", val: `${member.renewalCount}`, bg: "bg-emerald-50 dark:bg-emerald-900/20" },
             { icon: <Award className="h-5 w-5 text-purple-500" />, label: "Tier Level", val: tier.label, bg: "bg-purple-50 dark:bg-purple-900/20" },
           ].map((s) => (
@@ -136,7 +136,7 @@ export const MemberMembershipPage: React.FC = () => {
         {/* Plan perks */}
         <Card padding="none">
           <div className="border-b border-gray-100 p-4 flex items-center gap-2 dark:border-slate-700">
-            <Shield className="h-4 w-4 text-indigo-500" />
+            <Shield className="h-4 w-4 text-brand-500" />
             <p className="text-sm font-semibold text-gray-800 dark:text-slate-200">{tier.label} Plan — Included Benefits</p>
             <Badge variant={member.subscriptionTier}>{member.subscriptionTier}</Badge>
           </div>

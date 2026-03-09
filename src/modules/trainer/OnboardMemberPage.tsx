@@ -83,10 +83,10 @@ export const OnboardMemberPage: React.FC = () => {
           {stepLabels.map((label, i) => (
             <React.Fragment key={label}>
               <div className="flex flex-col items-center gap-1">
-                <div className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${step > i + 1 ? "bg-green-500 text-white" : step === i + 1 ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-400"}`}>
+                <div className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${step > i + 1 ? "bg-green-500 text-white" : step === i + 1 ? "bg-brand-600 text-white" : "bg-gray-100 text-gray-400"}`}>
                   {step > i + 1 ? "✓" : i + 1}
                 </div>
-                <span className={`text-[10px] font-medium hidden sm:block ${step === i + 1 ? "text-indigo-600" : "text-gray-400"}`}>{label}</span>
+                <span className={`text-[10px] font-medium hidden sm:block ${step === i + 1 ? "text-brand-600" : "text-gray-400"}`}>{label}</span>
               </div>
               {i < 3 && <div className={`flex-1 h-0.5 mb-4 ${step > i + 1 ? "bg-green-400" : "bg-gray-200"}`} />}
             </React.Fragment>
@@ -110,8 +110,8 @@ export const OnboardMemberPage: React.FC = () => {
           {step === 2 && couponInfo && (
             <div className="space-y-4">
               <h2 className="font-semibold text-gray-800">Confirm Coupon Details</h2>
-              <div className="rounded-xl bg-indigo-50 p-4 space-y-2">
-                <div className="flex justify-between text-sm"><span className="text-gray-500">Coupon</span><span className="font-mono font-bold text-indigo-700">{couponInfo.code}</span></div>
+              <div className="rounded-xl bg-brand-50 p-4 space-y-2">
+                <div className="flex justify-between text-sm"><span className="text-gray-500">Coupon</span><span className="font-mono font-bold text-brand-700">{couponInfo.code}</span></div>
                 <div className="flex justify-between text-sm"><span className="text-gray-500">Gym</span><span className="font-medium text-gray-800">{couponInfo.gymName}</span></div>
                 <div className="flex justify-between text-sm"><span className="text-gray-500">Tier</span><span className="font-medium text-gray-800">{couponInfo.tier}</span></div>
               </div>
@@ -153,16 +153,16 @@ export const OnboardMemberPage: React.FC = () => {
 
               {/* Auto-assigned nutrition plan */}
               {assignedPlan && (
-                <div className="w-full rounded-xl border border-indigo-100 bg-indigo-50 p-4 text-left">
+                <div className="w-full rounded-xl border border-brand-100 bg-brand-50 p-4 text-left">
                   <div className="flex items-center gap-2 mb-2">
-                    <Cpu className="h-4 w-4 text-indigo-600" />
-                    <p className="text-xs font-semibold text-indigo-800">Nutrition Plan Auto-Assigned</p>
+                    <Cpu className="h-4 w-4 text-brand-600" />
+                    <p className="text-xs font-semibold text-brand-700">Nutrition Plan Auto-Assigned</p>
                   </div>
-                  <p className="text-sm font-bold text-indigo-900">{assignedPlan.title}</p>
-                  <p className="text-xs text-indigo-600 mt-0.5">
+                  <p className="text-sm font-bold text-brand-900">{assignedPlan.title}</p>
+                  <p className="text-xs text-brand-600 mt-0.5">
                     {assignedPlan.goalType.replace("_", " ")} · {assignedPlan.duration} · v{assignedPlan.version}
                   </p>
-                  <p className="text-[11px] text-indigo-500 mt-1">Based on their <strong>{activated.subscriptionTier}</strong> subscription tier</p>
+                  <p className="text-[11px] text-brand-500 mt-1">Based on their <strong>{activated.subscriptionTier}</strong> subscription tier</p>
                 </div>
               )}
 

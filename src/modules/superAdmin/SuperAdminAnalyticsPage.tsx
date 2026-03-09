@@ -35,10 +35,10 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
 };
 
-const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#06b6d4"];
+const COLORS = ["#FF6A00", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#06b6d4"];
 
 const radialData = (activationRate: number, renewalRate: number) => [
-  { name: "Activation Rate", value: activationRate, fill: "#6366f1" },
+  { name: "Activation Rate", value: activationRate, fill: "#FF6A00" },
   { name: "Renewal Rate", value: renewalRate, fill: "#10b981" },
 ];
 
@@ -100,7 +100,7 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
             className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
           >
             {[
-              { label: "Activation Rate", value: `${activationRate}%`, icon: <Activity className="h-5 w-5" />, colorClass: "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400", sub: "Active / Total Members" },
+              { label: "Activation Rate", value: `${activationRate}%`, icon: <Activity className="h-5 w-5" />, colorClass: "bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400", sub: "Active / Total Members" },
               { label: "Renewal Rate", value: `${renewalRate}%`, icon: <TrendingUp className="h-5 w-5" />, colorClass: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400", sub: "Based on 90-day window" },
               { label: "Total Members", value: stats?.totalMembers.toLocaleString(), icon: <Users className="h-5 w-5" />, colorClass: "bg-violet-50 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400", sub: "All gyms combined" },
               { label: "MRR", value: `₹${((stats?.monthlyRecurringRevenue ?? 0) / 1000).toFixed(1)}k`, icon: <DollarSign className="h-5 w-5" />, colorClass: "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400", sub: `${stats?.subscriptionGrowthRate}% MoM growth` },
@@ -142,9 +142,9 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
                 </RadialBarChart>
               </ResponsiveContainer>
               <div className="mt-2 grid grid-cols-2 gap-2 text-center">
-                <div className="rounded-lg bg-indigo-50 py-2 dark:bg-indigo-900/20">
-                  <p className="text-lg font-bold text-indigo-700 dark:text-indigo-400">{activationRate}%</p>
-                  <p className="text-[10px] text-indigo-500 dark:text-indigo-500">Activation</p>
+                <div className="rounded-lg bg-brand-50 py-2 dark:bg-brand-600/10">
+                  <p className="text-lg font-bold text-brand-700 dark:text-brand-400">{activationRate}%</p>
+                  <p className="text-[10px] text-brand-500 dark:text-brand-500">Activation</p>
                 </div>
                 <div className="rounded-lg bg-emerald-50 py-2 dark:bg-emerald-900/20">
                   <p className="text-lg font-bold text-emerald-700 dark:text-emerald-400">{renewalRate}%</p>
@@ -166,7 +166,7 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
                   <YAxis tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} unit="%" domain={[50, 100]} />
                   <Tooltip formatter={(v, name) => [name === "Activation Rate" ? `${Number(v)}%` : v, String(name)]} />
                   <Legend wrapperStyle={{ fontSize: 12 }} />
-                  <Line type="monotone" dataKey="Activation Rate" stroke="#6366f1" strokeWidth={2.5} dot={{ r: 3, fill: "#6366f1" }} />
+                  <Line type="monotone" dataKey="Activation Rate" stroke="#FF6A00" strokeWidth={2.5} dot={{ r: 3, fill: "#FF6A00" }} />
                 </LineChart>
               </ResponsiveContainer>
             </motion.div>
@@ -186,8 +186,8 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
                     <stop offset="95%" stopColor="#f59e0b" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="subGrad2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#6366f1" stopOpacity={0.25} />
-                    <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#FF6A00" stopOpacity={0.25} />
+                    <stop offset="95%" stopColor="#FF6A00" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" className="dark:stroke-slate-700" />
@@ -197,7 +197,7 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
                 <Tooltip />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
                 <Area yAxisId="left" type="monotone" dataKey="revenue" name="Revenue (₹)" stroke="#f59e0b" fill="url(#revGrad)" strokeWidth={2} dot={false} />
-                <Area yAxisId="right" type="monotone" dataKey="subscriptions" name="Subscriptions" stroke="#6366f1" fill="url(#subGrad2)" strokeWidth={2} dot={false} />
+                <Area yAxisId="right" type="monotone" dataKey="subscriptions" name="Subscriptions" stroke="#FF6A00" fill="url(#subGrad2)" strokeWidth={2} dot={false} />
               </AreaChart>
             </ResponsiveContainer>
           </motion.div>
@@ -215,7 +215,7 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
                   <XAxis type="number" tick={{ fontSize: 10, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                   <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fill: "#9ca3af" }} axisLine={false} tickLine={false} width={100} />
                   <Tooltip />
-                  <Bar dataKey="Members" fill="#6366f1" radius={[0, 4, 4, 0]}>
+                  <Bar dataKey="Members" fill="#FF6A00" radius={[0, 4, 4, 0]}>
                     {gymBarData.map((_, idx) => (
                       <Cell key={idx} fill={COLORS[idx % COLORS.length]} />
                     ))}
@@ -233,17 +233,17 @@ export const SuperAdminAnalyticsPage: React.FC = () => {
               <div className="space-y-3">
                 {trainers.map((t, idx) => (
                   <div key={t.id} className="flex items-center gap-3">
-                    <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${idx < 3 ? "bg-indigo-600 text-white dark:bg-indigo-500" : "bg-gray-100 text-gray-500 dark:bg-slate-700 dark:text-slate-400"}`}>
+                    <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${idx < 3 ? "bg-brand-600 text-white dark:bg-brand-500" : "bg-gray-100 text-gray-500 dark:bg-slate-700 dark:text-slate-400"}`}>
                       {idx + 1}
                     </span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
                         <p className="truncate text-xs font-medium text-gray-800 dark:text-slate-100">{t.name}</p>
-                        <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 ml-2">{t.membersOnboarded}</p>
+                        <p className="text-xs font-semibold text-brand-600 dark:text-brand-400 ml-2">{t.membersOnboarded}</p>
                       </div>
                       <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-slate-700">
                         <div
-                          className="absolute inset-y-0 left-0 rounded-full bg-indigo-500"
+                          className="absolute inset-y-0 left-0 rounded-full bg-brand-500"
                           style={{ width: `${Math.round((t.membersOnboarded / (trainers[0]?.membersOnboarded || 1)) * 100)}%` }}
                         />
                       </div>

@@ -29,7 +29,7 @@ const TIER_FOR_GOAL: Record<GoalType, SubscriptionTier> = {
 
 const TIER_COLOR: Record<SubscriptionTier, string> = {
   basic: "bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
-  standard: "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400",
+  standard: "bg-brand-50 text-brand-700 dark:bg-brand-600/15 dark:text-brand-400",
   premium: "bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
 };
 
@@ -67,7 +67,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
         actions={
           <button
             onClick={() => setModalOpen(true)}
-            className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+            className="flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
           >
             <Plus className="h-4 w-4" />
             Upload Plan
@@ -77,11 +77,11 @@ export const OwnerNutritionPlansPage: React.FC = () => {
 
       <div className="p-6">
         {/* Auto-assignment info */}
-        <div className="mb-5 flex items-start gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 dark:border-indigo-900/40 dark:bg-indigo-900/10">
-          <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 dark:text-indigo-400" />
+        <div className="mb-5 flex items-start gap-3 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 dark:border-brand-600/20 dark:bg-brand-600/10">
+          <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
           <div>
-            <p className="text-sm font-semibold text-indigo-800 dark:text-indigo-300">Auto-assignment is active</p>
-            <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">
+            <p className="text-sm font-semibold text-brand-700 dark:text-brand-300">Auto-assignment is active</p>
+            <p className="text-xs text-brand-600 dark:text-brand-400 mt-0.5">
               Members receive a nutrition plan instantly when onboarded — no trainer action needed.
               <span className="mx-1 font-medium">Basic → Maintenance</span>·
               <span className="mx-1 font-medium">Standard → Weight Loss</span>·
@@ -115,7 +115,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
                 <div className="space-y-1">
                   <p className="text-xs text-gray-500 dark:text-slate-400">Duration: <span className="font-medium text-gray-700 dark:text-slate-300">{p.duration}</span></p>
                   <p className="text-xs text-gray-500 dark:text-slate-400">Version: <span className="font-medium text-gray-700 dark:text-slate-300">v{p.version}</span></p>
-                  <p className="text-xs text-gray-400 dark:text-slate-500">Assigned to <span className="font-semibold text-indigo-600 dark:text-indigo-400">{p.assignedCount ?? 0}</span> members</p>
+                  <p className="text-xs text-gray-400 dark:text-slate-500">Assigned to <span className="font-semibold text-brand-600 dark:text-brand-400">{p.assignedCount ?? 0}</span> members</p>
                 </div>
                 <p className="mt-3 text-[11px] text-gray-400 dark:text-slate-500 border-t border-gray-100 dark:border-slate-700 pt-2">
                   Uploaded: {new Date(p.uploadedAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
@@ -141,7 +141,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
               disabled={saving}
               form="plan-form"
               type="submit"
-              className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
+              className="flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 disabled:opacity-50"
             >
               <Upload className="h-4 w-4" />
               {saving ? "Saving…" : "Upload Plan"}
@@ -157,7 +157,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               placeholder="e.g. 12-Week Fat Loss Plan"
-              className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
+              className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
             />
           </div>
           <div>
@@ -165,7 +165,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
             <select
               value={form.goalType}
               onChange={(e) => setForm({ ...form, goalType: e.target.value as GoalType })}
-              className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+              className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
             >
               <option value="weight_loss">Weight Loss</option>
               <option value="muscle_gain">Muscle Gain</option>
@@ -180,7 +180,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
                 value={form.duration}
                 onChange={(e) => setForm({ ...form, duration: e.target.value })}
                 placeholder="e.g. 12 weeks"
-                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
+                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
               />
             </div>
             <div>
@@ -190,7 +190,7 @@ export const OwnerNutritionPlansPage: React.FC = () => {
                 value={form.version}
                 onChange={(e) => setForm({ ...form, version: e.target.value })}
                 placeholder="e.g. 2.0"
-                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
+                className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
               />
             </div>
           </div>

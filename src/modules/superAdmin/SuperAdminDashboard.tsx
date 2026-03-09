@@ -151,7 +151,7 @@ export const SuperAdminDashboard: React.FC = () => {
                 label="Total Active Gyms"
                 value={stats?.totalGyms ?? 0}
                 icon={<Building2 className="h-5 w-5" />}
-                colorClass="bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+                colorClass="bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400"
                 trend={`${stats?.gymGrowthRate}% MoM`}
                 trendUp
               />
@@ -203,8 +203,8 @@ export const SuperAdminDashboard: React.FC = () => {
                 <AreaChart data={monthly} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
                   <defs>
                     <linearGradient id="gymsGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#6366f1" stopOpacity={0.2} />
-                      <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#FF6A00" stopOpacity={0.2} />
+                      <stop offset="95%" stopColor="#FF6A00" stopOpacity={0} />
                     </linearGradient>
                     <linearGradient id="subsGrad" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#10b981" stopOpacity={0.2} />
@@ -218,7 +218,7 @@ export const SuperAdminDashboard: React.FC = () => {
                     contentStyle={{ background: "var(--tw-bg-opacity,1) hsl(222,47%,11%)", border: "1px solid #334155", borderRadius: 8, fontSize: 12 }}
                   />
                   <Legend wrapperStyle={{ fontSize: 12 }} />
-                  <Area type="monotone" dataKey="gyms" name="Gyms" stroke="#6366f1" fill="url(#gymsGrad)" strokeWidth={2} dot={false} />
+                  <Area type="monotone" dataKey="gyms" name="Gyms" stroke="#FF6A00" fill="url(#gymsGrad)" strokeWidth={2} dot={false} />
                   <Area type="monotone" dataKey="subscriptions" name="Subscriptions" stroke="#10b981" fill="url(#subsGrad)" strokeWidth={2} dot={false} />
                 </AreaChart>
               </ResponsiveContainer>
@@ -243,7 +243,7 @@ export const SuperAdminDashboard: React.FC = () => {
                     formatter={(v) => [`₹${Number(v).toLocaleString("en-IN")}`, "Revenue"]}
                     contentStyle={{ background: "#1e293b", border: "1px solid #334155", borderRadius: 8, fontSize: 12 }}
                   />
-                  <Bar dataKey="revenue" name="Revenue" fill="#6366f1" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="revenue" name="Revenue" fill="#FF6A00" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </motion.div>
@@ -260,7 +260,7 @@ export const SuperAdminDashboard: React.FC = () => {
               <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-100">Gyms</h3>
               <button
                 onClick={() => navigate("/admin/gyms")}
-                className="text-xs font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+                className="text-xs font-medium text-brand-600 hover:underline dark:text-brand-400"
               >
                 View all →
               </button>
@@ -287,7 +287,7 @@ export const SuperAdminDashboard: React.FC = () => {
                           <span>{g.licensesUsed}/{g.licensesPurchased}</span>
                           <div className="relative h-1.5 w-16 overflow-hidden rounded-full bg-gray-200 dark:bg-slate-700">
                             <div
-                              className="absolute inset-y-0 left-0 rounded-full bg-indigo-500"
+                              className="absolute inset-y-0 left-0 rounded-full bg-brand-500"
                               style={{ width: `${Math.min(100, (g.licensesUsed / g.licensesPurchased) * 100)}%` }}
                             />
                           </div>
@@ -319,7 +319,7 @@ export const SuperAdminDashboard: React.FC = () => {
               <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-100">Trainer Activity</h3>
               <button
                 onClick={() => navigate("/admin/trainers")}
-                className="text-xs font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+                className="text-xs font-medium text-brand-600 hover:underline dark:text-brand-400"
               >
                 View all →
               </button>
@@ -338,7 +338,7 @@ export const SuperAdminDashboard: React.FC = () => {
                     <tr key={t.id} className="hover:bg-gray-50 dark:hover:bg-slate-700/30 transition-colors">
                       <td className="px-5 py-3.5">
                         <div className="flex items-center gap-2.5">
-                          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-400">
+                          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700 dark:bg-brand-600/20 dark:text-brand-400">
                             {t.name.charAt(0)}
                           </div>
                           <span className="font-medium text-gray-900 dark:text-slate-100">{t.name}</span>

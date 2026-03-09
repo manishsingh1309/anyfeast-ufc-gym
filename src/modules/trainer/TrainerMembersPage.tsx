@@ -87,7 +87,7 @@ export const TrainerMembersPage: React.FC = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by name or phone…"
-              className="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-200 bg-white text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
+              className="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-200 bg-white text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
             />
           </div>
           <div className="flex gap-2 flex-wrap">
@@ -97,7 +97,7 @@ export const TrainerMembersPage: React.FC = () => {
                 onClick={() => setTab(t.value)}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-all ${
                   tab === t.value
-                    ? "bg-indigo-600 text-white dark:bg-indigo-500"
+                    ? "bg-brand-600 text-white dark:bg-brand-500"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-slate-700 dark:text-slate-400"
                 }`}
               >
@@ -127,7 +127,7 @@ export const TrainerMembersPage: React.FC = () => {
                     <tr key={m.id} className={`transition-colors hover:bg-gray-50 dark:hover:bg-slate-700/30 ${urgent ? "bg-amber-50/50 dark:bg-amber-900/10" : ""}`}>
                       <td className="px-6 py-3.5">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-400">
+                          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700 dark:bg-brand-600/20 dark:text-brand-400">
                             {m.name.split(" ").map((w: string) => w[0]).join("").slice(0, 2).toUpperCase()}
                           </div>
                           <span className="font-medium text-gray-800 dark:text-slate-200">{m.name}</span>

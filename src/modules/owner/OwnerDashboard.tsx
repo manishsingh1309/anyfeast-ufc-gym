@@ -161,7 +161,7 @@ export const OwnerDashboard: React.FC = () => {
               label="Total Licenses"
               value={stats?.totalPurchased ?? 0}
               icon={<Package className="h-5 w-5" />}
-              colorClass="bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+              colorClass="bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400"
               trend="Across all gyms"
               trendUp
             />
@@ -355,7 +355,7 @@ export const OwnerDashboard: React.FC = () => {
                     </td>
                     <td className="px-6 py-3.5">
                       <div className="flex items-center gap-2.5">
-                        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-400">
+                        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700 dark:bg-brand-600/20 dark:text-brand-400">
                           {t.trainerName.charAt(0)}
                         </div>
                         <span className="font-medium text-gray-800 dark:text-slate-200">

@@ -17,18 +17,20 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
   description,
   action,
 }) => (
-  <div className="flex flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-gray-200 bg-white py-16 dark:border-slate-700 dark:bg-slate-800/50">
+  <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-brand-200 bg-brand-50/40 py-16 dark:border-slate-700 dark:bg-slate-800/40">
     {icon && (
-      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 text-gray-400 dark:bg-slate-700 dark:text-slate-500">
+      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-50 text-brand-500 dark:bg-brand-600/15 dark:text-brand-400 shadow-brand-sm">
         {icon}
       </div>
     )}
-    <p className="text-sm font-medium text-gray-700 dark:text-slate-300">{title}</p>
-    {description && (
-      <p className="max-w-xs text-center text-xs text-gray-400 dark:text-slate-500">
-        {description}
-      </p>
-    )}
-    {action && <div className="mt-2">{action}</div>}
+    <div className="flex flex-col items-center gap-1">
+      <p className="text-sm font-bold text-gray-800 dark:text-slate-200">{title}</p>
+      {description && (
+        <p className="max-w-xs text-center text-xs text-gray-400 dark:text-slate-500 leading-relaxed">
+          {description}
+        </p>
+      )}
+    </div>
+    {action && <div className="mt-1">{action}</div>}
   </div>
 );

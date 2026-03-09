@@ -10,7 +10,7 @@ import { getAnalyticsSummary, getMonthlyData, getTrainerLeaderboard } from "../.
 import type { AnalyticsSummary, MonthlyDataPoint, TrainerLeaderboardEntry } from "../../types";
 
 const AVATAR_COLORS = [
-  "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-400",
+  "bg-brand-100 text-brand-700 dark:bg-brand-600/20 dark:text-brand-400",
   "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-400",
   "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-400",
   "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-400",
@@ -50,7 +50,7 @@ export const OwnerAnalyticsPage: React.FC = () => {
             trend="↑ vs last month"
             trendUp
             progressValue={summary!.activationRate}
-            progressColor="bg-indigo-500"
+            progressColor="bg-brand-500"
           />
           <StatCard
             label="Renewal Rate"

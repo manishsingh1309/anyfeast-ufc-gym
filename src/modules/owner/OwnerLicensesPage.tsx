@@ -98,8 +98,8 @@ const PurchaseModal: React.FC<PurchaseModalProps> = ({
                     className={[
                       "rounded-xl border-2 py-3 text-sm font-bold transition-all",
                       selected === n
-                        ? "border-indigo-600 bg-indigo-50 text-indigo-700"
-                        : "border-gray-200 text-gray-700 hover:border-indigo-300",
+                        ? "border-brand-600 bg-brand-50 text-brand-700"
+                        : "border-gray-200 text-gray-700 hover:border-brand-300",
                     ].join(" ")}
                   >
                     {n} licenses
@@ -219,8 +219,8 @@ export const OwnerLicensesPage: React.FC = () => {
                   {/* Gym header row */}
                   <div className="mb-4 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50">
-                        <Building2 className="h-5 w-5 text-indigo-600" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50">
+                        <Building2 className="h-5 w-5 text-brand-600" />
                       </div>
                       <div>
                         <p className="font-semibold text-gray-800">
@@ -270,7 +270,7 @@ export const OwnerLicensesPage: React.FC = () => {
                               ? "bg-red-500"
                               : pct >= 70
                                 ? "bg-amber-500"
-                                : "bg-indigo-500"
+                                : "bg-brand-500"
                           }`}
                           style={{ width: `${pct}%` }}
                         />

@@ -88,7 +88,7 @@ export const OtpPage: React.FC = () => {
   if (!contact) return null;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-indigo-50 to-white px-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-brand-50 via-white to-accent-50/30 px-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <button
@@ -99,10 +99,10 @@ export const OtpPage: React.FC = () => {
           Back
         </button>
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-card">
           {/* Icon */}
-          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50">
-            <ShieldCheck className="h-6 w-6 text-indigo-600" />
+          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 shadow-brand-sm">
+            <ShieldCheck className="h-6 w-6 text-brand-600" />
           </div>
 
           <h2 className="mb-1 text-lg font-semibold text-gray-800">
@@ -149,7 +149,7 @@ export const OtpPage: React.FC = () => {
               <button
                 onClick={handleResend}
                 disabled={isResending}
-                className="text-sm font-medium text-indigo-600 hover:underline disabled:opacity-50"
+                className="text-sm font-medium text-brand-600 hover:underline disabled:opacity-50"
               >
                 {isResending ? "Sending…" : "Resend OTP"}
               </button>

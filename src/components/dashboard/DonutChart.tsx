@@ -18,7 +18,7 @@ export const DonutChart: React.FC<DonutChartProps> = ({
   value,
   size = 96,
   strokeWidth = 10,
-  color = "#6366f1",
+  color = "#FF6A00",
   trackColor = "#e5e7eb",
   label,
   sublabel,

@@ -28,9 +28,9 @@ export const Card: React.FC<CardProps> = ({
 }) => (
   <div
     className={clsx(
-      "rounded-xl border border-gray-200 bg-white shadow-sm",
-      "dark:border-slate-700 dark:bg-slate-800",
-      hover && "transition-shadow hover:shadow-md",
+      "rounded-2xl border border-gray-100 bg-white shadow-card",
+      "dark:border-slate-700/60 dark:bg-[#1e2535]",
+      hover && "transition-all duration-200 hover:shadow-card-hover hover:-translate-y-0.5",
       paddingMap[padding],
       className
     )}
@@ -59,23 +59,23 @@ export const StatCard: React.FC<StatCardProps> = ({
   icon,
   trend,
   trendUp,
-  colorClass = "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400",
+  colorClass = "bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400",
   progressValue,
-  progressColor = "bg-indigo-500",
+  progressColor = "bg-brand-gradient",
 }) => (
   <Card hover>
     <div className="flex items-start justify-between">
       <div className="flex flex-col gap-1 min-w-0 flex-1">
-        <p className="text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-slate-400">
+        <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400 dark:text-slate-500">
           {label}
         </p>
-        <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{value}</p>
+        <p className="text-2xl font-bold text-gray-900 dark:text-slate-100 leading-tight">{value}</p>
         {trend && (
           <p
             className={clsx(
-              "text-xs font-medium",
+              "text-xs font-semibold",
               trendUp
-                ? "text-emerald-600 dark:text-emerald-400"
+                ? "text-accent-600 dark:text-accent-400"
                 : "text-red-500 dark:text-red-400"
             )}
           >
@@ -90,14 +90,14 @@ export const StatCard: React.FC<StatCardProps> = ({
             </div>
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-slate-700">
               <div
-                className={clsx("h-full rounded-full transition-all duration-500", progressColor)}
+                className={clsx("h-full rounded-full transition-all duration-700", progressColor)}
                 style={{ width: `${Math.min(100, progressValue)}%` }}
               />
             </div>
           </div>
         )}
       </div>
-      <div className={clsx("ml-4 shrink-0 rounded-xl p-2.5", colorClass)}>{icon}</div>
+      <div className={clsx("ml-4 shrink-0 rounded-2xl p-3", colorClass)}>{icon}</div>
     </div>
   </Card>
 );

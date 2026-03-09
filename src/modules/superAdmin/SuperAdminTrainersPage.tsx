@@ -49,7 +49,7 @@ export const SuperAdminTrainersPage: React.FC = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              { label: "Total Members Onboarded", value: totalOnboarded, color: "text-indigo-600 dark:text-indigo-400" },
+              { label: "Total Members Onboarded", value: totalOnboarded, color: "text-brand-600 dark:text-brand-400" },
               { label: "Currently Active Members", value: totalActive, color: "text-emerald-600 dark:text-emerald-400" },
               { label: "Total Renewals Facilitated", value: totalRenewals, color: "text-amber-600 dark:text-amber-400" },
             ].map((s) => (
@@ -68,7 +68,7 @@ export const SuperAdminTrainersPage: React.FC = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search by trainer name or gym…"
-                className="w-full rounded-lg border border-gray-200 bg-white py-2 pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
+                className="w-full rounded-lg border border-gray-200 bg-white py-2 pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:placeholder-slate-500"
               />
               {search && (
                 <button onClick={() => setSearch("")} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
@@ -83,7 +83,7 @@ export const SuperAdminTrainersPage: React.FC = () => {
                   onClick={() => setStatusFilter(s)}
                   className={`px-3 py-2 text-xs font-medium capitalize transition-colors ${
                     statusFilter === s
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-brand-600 text-white"
                       : "text-gray-600 hover:bg-gray-50 dark:text-slate-400 dark:hover:bg-slate-700"
                   }`}
                 >
@@ -121,7 +121,7 @@ export const SuperAdminTrainersPage: React.FC = () => {
                       >
                         <td className="px-5 py-3.5">
                           <div className="flex items-center gap-2.5">
-                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-400">
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700 dark:bg-brand-600/20 dark:text-brand-400">
                               {t.name.charAt(0)}
                             </div>
                             <span className="font-medium text-gray-900 dark:text-slate-100">{t.name}</span>

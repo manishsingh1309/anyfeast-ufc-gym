@@ -153,7 +153,7 @@ export const TrainerDashboard: React.FC = () => {
                 label="Members Onboarded"
                 value={members.length}
                 icon={<Users className="h-5 w-5" />}
-                colorClass="bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+                colorClass="bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-brand-400"
                 trend="Total in your gym"
                 trendUp
               />
@@ -214,7 +214,7 @@ export const TrainerDashboard: React.FC = () => {
               <div className="h-2.5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-slate-700">
                 <div
                   className={`h-full rounded-full transition-all duration-700 ${
-                    licPct >= 90 ? "bg-red-500" : licPct >= 70 ? "bg-amber-500" : "bg-indigo-500"
+                    licPct >= 90 ? "bg-red-500" : licPct >= 70 ? "bg-amber-500" : "bg-brand-500"
                   }`}
                   style={{ width: `${licPct}%` }}
                 />
@@ -239,7 +239,7 @@ export const TrainerDashboard: React.FC = () => {
               <h3 className="text-sm font-semibold text-gray-800 dark:text-slate-200">Recent Members</h3>
               <button
                 onClick={() => navigate("/trainer/members")}
-                className="text-xs font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+                className="text-xs font-medium text-brand-600 hover:underline dark:text-brand-400"
               >
                 View all →
               </button>
@@ -276,7 +276,7 @@ export const TrainerDashboard: React.FC = () => {
                         >
                           <td className="px-5 py-3.5">
                             <div className="flex items-center gap-2.5">
-                              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-400">
+                              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700 dark:bg-brand-600/20 dark:text-brand-400">
                                 {m.name.charAt(0)}
                               </div>
                               <span className="font-medium text-gray-900 dark:text-slate-100">{m.name}</span>
